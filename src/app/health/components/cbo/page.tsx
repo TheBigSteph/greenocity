@@ -1,8 +1,9 @@
 "use client";
 
 import HeroSection from "@/components/HeroSection";
+import { TestimoniesSection } from "@/components/TestimoniesSection";
 import { Separator } from "@/components/ui/separator";
-import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   {

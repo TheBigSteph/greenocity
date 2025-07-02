@@ -3,12 +3,11 @@
 import HeroSection from "@/components/HeroSection";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-import Link from "next/link";
 import { TestimoniesSection } from "@/components/TestimoniesSection";
 
 const services = [
   {
-    image: "/images/service1.jpg",
+    image: "/images/service1.jpg",  
     description:
       "Evaluate and access public funding and financing for climate and water projects",
   },
