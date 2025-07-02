@@ -1,13 +1,9 @@
 "use client";
 
 import HeroSection from "@/components/HeroSection";
-import { Separator } from "@/components/ui/separator";
-<<<<<<< HEAD
-import Image from "next/image";
-=======
-import Link from "next/link";
 import { TestimoniesSection } from "@/components/TestimoniesSection";
->>>>>>> af4cfc2c266fb5e5eb0ded8af90e1b4ee0038268
+import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
 
 const services = [
   {
@@ -94,7 +90,7 @@ const SolutionCard = ({
 );
 
 export default function CommunityPage() {
-   const testimonies = [
+  const testimonies = [
     { name: "Alice", testimony: "Great service and fast delivery!" },
     { name: "Bob", testimony: "Amazing quality products, highly recommend!" },
     {
@@ -171,5 +167,3 @@ export default function CommunityPage() {
     </div>
   );
 }
-
-
