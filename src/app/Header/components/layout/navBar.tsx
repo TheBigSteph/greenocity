@@ -20,7 +20,9 @@ import {
   Menu,
   X,
   Leaf,
-  Heart,
+  Hotel,
+  Rss,
+  MapPinHouse,
   Target,
   Lightbulb,
   Loader2,
@@ -56,17 +58,12 @@ export default function NavBar() {
     {
       key: "about",
       icon: Lightbulb,
-      hasDropdown: true,
-      dropdownItems: [
-        { key: "careers", url: "/about/components/careers" },
-        { key: "our Team", url: "/about/components/team" },
-        { key: "our Values", url: "/about/components/values" },
-      ],
+      hasDropdown: false,
       urlKey: "/about",
     },
     {
-      key: "climate",
-      icon: Leaf,
+      key: "Villes",
+      icon: MapPinHouse,
       hasDropdown: true,
       dropdownItems: [
         { key: "community Finance", url: "/climate/components/community" },
@@ -77,8 +74,8 @@ export default function NavBar() {
       urlKey: "/climate",
     },
     {
-      key: "health",
-      icon: Heart,
+      key: "Bâtiments",
+      icon: Hotel,
       hasDropdown: true,
       dropdownItems: [
         { key: "cbo Sustainability", url: "/health/components/cbo" },
@@ -103,7 +100,7 @@ export default function NavBar() {
     },
     {
       key: "blog",
-      icon: () => null,
+      icon: Rss,
       hasDropdown: false,
       urlKey: "/blog",
     },

@@ -1,22 +1,22 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import React, { useState } from "react";
-import { Users, Target, TrendingUp, Play } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { Play, Target, TrendingUp, Users, Leaf, Building, Globe } from "lucide-react";
+import Image from "next/image";
+import React, { useState } from "react";
 
 export default function Home() {
   return (
     <div className="w-full bg-gray-100">
       <Hero />
+      <MissionSection />
       <ServicesSection />
-      <QuantifiedVenturesPage />
-      <SolutionsSections />
+      <SolutionsSection />
+      <Methodology />
       <News />
-      <OurWork />
       <Benefits />
+      {/* <ContactSection /> */}
     </div>
   );
 }
@@ -26,24 +26,65 @@ function Hero() {
     <div className="relative w-full h-[270px] md:h-[600px]">
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1695019947916-c3e789ba0e2b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJlbGxlJTIwaW1hZ2UlMjBkZSUyMGxhJTIwbmF0dXJlfGVufDB8fDB8fHww"
-          alt="Hero Image"
+          src="/images/cover_1.jpg" // Remplacez par une image de ville verte
+          alt="Ville durable"
           fill
-          className="object-cover rounded-br-[200px] md:rounded-br-[300px] md:rounded-bl-[300px] h-screen"
+          className="object-cover rounded-br-[200px] md:rounded-br-[200px] md:rounded-bl-[200px] h-screen"
           priority
         />
       </div>
 
-      <div className="absolute inset-0 bg-black/30 rounded-br-[200px] md:rounded-br-[300px] md:rounded-bl-[300px]" />
+      <div className="absolute inset-0 bg-black/30 rounded-br-[200px] md:rounded-br-[200px] md:rounded-bl-[300px]" />
 
       <div className="relative z-10 grid md:grid-cols-1 px-6 items-center justify-center h-full text-center md:px-24">
-        <div className=" mt-16 md:mt-32">
-          <h1 className="text-3xl md:text-5xl/14 font-bold md:w-[750px] md:mx-auto text-white mb-6 li">
-            Bold, Investible Solutions for the Wellbeing of People and Planet
+        <div className="mt-16 md:mt-32">
+          <h1 className="text-3xl md:text-5xl/14 font-bold md:w-[750px] lg:w-[850px] md:mx-auto text-white mb-6">
+            Financez la transition écologique de votre ville avec GreenOCity
           </h1>
+          <p className="text-white text-lg md:text-2xl mb-6 md:w-[750px] lg:w-[850px] md:mx-auto">
+            Connectons les projets urbains à fort impact écologique avec les investisseurs engagés, grâce à des Green Bonds accessibles et responsables.
+          </p>
           <Button size="large" className="bg-[#2AAA8A] rounded-full uppercase">
-            Contact Us to Get Started
+            Découvrir notre solution
           </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MissionSection() {
+  return (
+    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+          Notre mission : réconcilier finance et écologie
+        </h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div className="p-6 bg-green-50 rounded-lg">
+            <Globe className="w-12 h-12 text-green-600 mx-auto mb-4" />
+            <h3 className="text-xl font-bold text-gray-800 mb-2">Vision</h3>
+            <p className="text-gray-600">
+              Développer un monde responsable qui réconcilie écologie et inclusion, mobilité et lien social.
+            </p>
+          </div>
+          
+          <div className="p-6 bg-green-50 rounded-lg">
+            <Target className="w-12 h-12 text-green-600 mx-auto mb-4" />
+            <h3 className="text-xl font-bold text-gray-800 mb-2">Ambition</h3>
+            <p className="text-gray-600">
+              Catalyser des solutions audacieuses pour libérer des capitaux vers une planète plus saine.
+            </p>
+          </div>
+          
+          <div className="p-6 bg-green-50 rounded-lg">
+            <TrendingUp className="w-12 h-12 text-green-600 mx-auto mb-4" />
+            <h3 className="text-xl font-bold text-gray-800 mb-2">Action</h3>
+            <p className="text-gray-600">
+              Créer un véhicule d'investissement pour les projets verts urbains et compenser localement l'empreinte carbone.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -53,8 +94,8 @@ function Hero() {
 interface Service {
   id: string;
   icon: React.ComponentType<{ className?: string }>;
-  titleKey: string;
-  descriptionKey: string;
+  title: string;
+  description: string;
   color: string;
   bgColor: string;
 }
@@ -63,27 +104,24 @@ const services: Service[] = [
   {
     id: "consulting",
     icon: Users,
-    titleKey: "Conseils",
-    descriptionKey:
-      "Nous évaluons la faisabilité d'entreprendre un financement basé sur les résultats et des solutions de financement, et concevons des structures novatrices pour résoudre des défis environnementaux, sanitaires et sociaux prolongés.",
-    color: "text-blue-600",
-    bgColor: "bg-blue-50",
+    title: "Conseil en Green Bonds",
+    description: "Nous accompagnons les villes dans la structuration et l'émission d'obligations vertes pour financer leurs projets écologiques.",
+    color: "text-green-600",
+    bgColor: "bg-green-50",
   },
   {
-    id: "development",
-    icon: Target,
-    titleKey: "Développement de Projets",
-    descriptionKey:
-      "En travaillant avec des partenaires gouvernementaux, associatifs et corporatifs, nous développons des programmes et projets qui créent des bénéfices environnementaux, sanitaires et sociaux pour les personnes et les écosystèmes.",
+    id: "projects",
+    icon: Leaf,
+    title: "Développement de Projets Verts",
+    description: "Identification et qualification de projets urbains à fort impact environnemental et social.",
     color: "text-emerald-600",
     bgColor: "bg-emerald-50",
   },
   {
-    id: "capitalization",
-    icon: TrendingUp,
-    titleKey: "Capitalisation",
-    descriptionKey:
-      "Nous offrons des solutions de financement et de fonds créatives pour les organisations publiques et privées cherchant des investisseurs et souhaitant utiliser des approches basées sur les résultats pour résoudre des problèmes environnementaux, sanitaires et sociaux critiques.",
+    id: "compensation",
+    icon: Building,
+    title: "Compensation Carbone Locale",
+    description: "Mise en relation des entreprises avec des projets locaux de compensation carbone pour éviter le greenwashing.",
     color: "text-cyan-600",
     bgColor: "bg-cyan-50",
   },
@@ -91,51 +129,43 @@ const services: Service[] = [
 
 function ServicesSection() {
   return (
-    <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-100 to-white">
-      <div className="max-w-11/12 mx-auto">
-        <div className="text-center max-w-5xl mx-auto mb-16 ">
-          <h2 className="text-xl sm:text-xl lg:text-2xl font-bold text-gray-600 mb-6 lg:mb-8 leading-tight">
-            QVentures designs, capitalizes, and scales investible solutions to
-            address the most pressing challenges facing communities.
+    <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-100">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center max-w-4xl mx-auto mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+            Nos services pour une ville plus verte
           </h2>
-
-          <p className="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
-            We work with pioneers and change makers to catalyze impact for the
-            greater good by pulling the levers of data, finance, innovation,
-            partnerships, and policy to develop bold solutions that produce
-            verified environmental and social outcomes.
+          <p className="text-lg text-gray-600">
+            GreenOCity propose une approche innovante pour financer la transition écologique des villes grâce aux mécanismes de finance verte.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-          {services.map((service, index) => {
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {services.map((service) => {
             const Icon = service.icon;
 
             return (
               <div
                 key={service.id}
-                className="group border-0 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 "
+                className="group border border-gray-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-2 rounded-xl overflow-hidden"
               >
-                <div className="p-6 text-center h-full flex flex-col">
+                <div className="p-8 text-center h-full flex flex-col">
                   <div
                     className={`w-20 h-20 ${service.bgColor} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}
                   >
                     <Icon className={`w-10 h-10 ${service.color}`} />
                   </div>
 
-                  <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-4 group-hover:text-teal-600 transition-colors duration-300">
-                    {service.titleKey}
+                  <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-green-600 transition-colors duration-300">
+                    {service.title}
                   </h3>
 
-                  <p className="text-base lg:text-lg text-gray-600 leading-relaxed flex-grow">
-                    {service.descriptionKey}
+                  <p className="text-gray-600 leading-relaxed flex-grow">
+                    {service.description}
                   </p>
 
                   <div
-                    className={`w-12 h-1 ${service.color.replace(
-                      "text-",
-                      "bg-"
-                    )} rounded-full mx-auto mt-6 group-hover:w-16 transition-all duration-300`}
+                    className={`w-12 h-1 ${service.color.replace("text-", "bg-")} rounded-full mx-auto mt-6 group-hover:w-16 transition-all duration-300`}
                   ></div>
                 </div>
               </div>
@@ -147,349 +177,270 @@ function ServicesSection() {
   );
 }
 
-function QuantifiedVenturesPage() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoUrl = "https://youtu.be/k4ua4eFgMWE";
-  const videoId = videoUrl.split("/").pop(); // extrait "k4ua4eFgMWE"
+function SolutionsSection() {
+  const solutions = [
+    {
+      title: "Performance énergétique des bâtiments",
+      image: "/images/solution1.jpg",
+    },
+    {
+      title: "Protection durable des terres",
+      image: "/images/solution2.jpg",
+    },
+    {
+      title: "Production d'énergie renouvelable",
+      image: "/images/solution3.jpg",
+    },
+    {
+      title: "Désartificialisation des sols",
+      image: "/images/solution4.jpg",
+    },
+  ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-400 to-green-300">
-      <div className="container mx-auto px-4 py-8 md:py-16">
-        <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
-          <h1 className="text-lg md:text-xl lg:text-3xl font-bold text-white mb-6 md:mb-8 leading-tight">
-            We work with innovators, risk takers, pragmatists, and optimists.
-          </h1>
-          <p className="text-base md:text-lg text-gray-50 leading-relaxed max-w-5xl mx-auto">
-            Quantified Ventures builds trusted partnerships with key public and
-            private stakeholders to structure outcomes-based transactions and
-            drive capital toward groundbreaking solutions and promising
-            innovations across the environmental, health, and social sectors.
+    <div className="py-16 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+            Nos solutions pour les villes
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            GreenOCity finance des projets verts locaux avec des co-bénéfices sociaux et environnementaux.
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto relative bg-black rounded-lg overflow-hidden shadow-2xl aspect-video">
-          {isPlaying ? (
-            <iframe
-              src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-              title="Quantified Ventures Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full"
-            />
-          ) : (
-            <div
-              className="relative w-full h-full cursor-pointer"
-              onClick={() => setIsPlaying(true)}
-            >
-              <img
-                src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
-                alt="Video thumbnail"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center hover:bg-black/30 transition-colors">
-                <div className="bg-red-600 rounded-full p-4 md:p-6 hover:bg-red-700 transition-colors shadow-lg">
-                  <Play className="w-8 h-8 md:w-12 md:h-12 text-white" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {solutions.map((solution, index) => (
+            <div key={index} className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+              <div className="aspect-[4/3] relative">
+                <Image
+                  src={solution.image}
+                  alt={solution.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                <div className="absolute inset-0 flex items-end p-6">
+                  <h3 className="text-white font-bold text-lg md:text-xl">
+                    {solution.title}
+                  </h3>
                 </div>
               </div>
             </div>
-          )}
-
-          {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-            <h3 className="text-4xl md:text-6xl lg:text-8xl font-black text-white/20 tracking-wider text-center">
-              WE ARE THE CATALYST
-            </h3>
-          </div> */}
+          ))}
         </div>
       </div>
     </div>
   );
 }
 
-type PropsCard = {
-  title: string;
-  image: string;
-};
-
-function SolutionsSections() {
-  const climateFinanceSolutions = [
+function Methodology() {
+  const steps = [
     {
-      title: "Community Finance",
-      image:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=250&fit=crop&crop=center",
+      title: "Pré-vente",
+      description: "Roadshow auprès des investisseurs ESG locaux et internationaux",
+      icon: "1",
     },
     {
-      title: "Green Banks and Climate Resilience",
-      image:
-        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=250&fit=crop&crop=center",
+      title: "Cadrage",
+      description: "Analyse des performances énergétiques et établissement du point zéro",
+      icon: "2",
     },
     {
-      title: "Natural Climate Solutions",
-      image:
-        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=250&fit=crop&crop=center",
+      title: "Documentation",
+      description: "Élaboration de la documentation écologique des projets",
+      icon: "3",
     },
     {
-      title: "Outdoor Recreation",
-      image:
-        "https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=250&fit=crop&crop=center",
-    },
-  ];
-
-  const healthSolutions = [
-    {
-      title: "Community-Based Organization Sustainability Solutions",
-      image:
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=250&fit=crop&crop=center",
+      title: "Marketing",
+      description: "Présentation des projets verts aux investisseurs",
+      icon: "4",
     },
     {
-      title: "Managed Care Organization Market Growth",
-      image:
-        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=250&fit=crop&crop=center",
+      title: "Exécution",
+      description: "Émission des Green Bonds et mobilisation des fonds",
+      icon: "5",
     },
     {
-      title: "SDOH Strategy and Financing",
-      image:
-        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=250&fit=crop&crop=center",
-    },
-    {
-      title: "State Medicaid Innovation",
-      image:
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=250&fit=crop&crop=center",
+      title: "Reporting",
+      description: "Suivi de l'utilisation des fonds et mesure d'impact",
+      icon: "6",
     },
   ];
-
-  const SolutionCard = ({ title, image }: PropsCard) => (
-    <div className="relative group cursor-pointer overflow-hidden transition-transform duration-300 hover:scale-105">
-      <div className="aspect-[4/2.5] relative ">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-        <div className="absolute inset-0 bg-cyan-600/40"></div>
-        <div className="absolute inset-0 flex items-center justify-center p-6">
-          <h3 className="text-white font-bold text-lg md:text-xl text-center leading-tight drop-shadow-lg">
-            {title}
-          </h3>
-        </div>
-      </div>
-    </div>
-  );
 
   return (
-    <div className="max-w-11/12 mx-auto py-16">
-      <div className="container mx-auto px-4">
-        <div className="mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-700 text-center mb-8">
-            Climate Finance Solutions
+    <div className="py-16 bg-white">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+            Notre méthodologie en 6 étapes
           </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {climateFinanceSolutions.map((solution, index) => (
-              <SolutionCard key={index} {...solution} />
-            ))}
-          </div>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Une approche structurée pour garantir le succès de vos projets verts
+          </p>
         </div>
 
-        <div>
-          <h2 className="text-3xl md:text-3xl font-bold text-gray-700 text-center mb-8">
-            Health and Human Services Solutions
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {healthSolutions.map((solution, index) => (
-              <SolutionCard key={index} {...solution} />
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-20">
-          <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {steps.map((step, index) => (
+            <div key={index} className="bg-green-50 p-6 rounded-lg border border-green-100">
+              <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">
+                {step.icon}
+              </div>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">{step.title}</h3>
+              <p className="text-gray-600">{step.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
 }
-
-type NewsItem = {
-  image: string;
-  title: string;
-  description: string;
-  link: string;
-};
 
 function News() {
-  const latestNews = [
+  const newsItems = [
     {
-      image:
-        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=250&fit=crop&crop=center",
-      title: "Quantified Ventures Launches New Climate Finance Solutions",
-      description:
-        "Broadband internet and water systems may seem like an odd pairing, but they’re inseparable when it comes to tackling challenges like aging infrastructure, workforce shortages, and the growing impacts of climate change. As affordability becomes an even greater concern, reliable fiber optic broadband offers a transformative solution to modernize water systems, enhance efficiency, and bridge urban-rural divides. ",
-      link: "#",
+      title: "GreenOCity lance une nouvelle plateforme de Green Bonds",
+      description: "Notre nouvelle solution permet aux villes de financer plus facilement leurs projets écologiques grâce à des obligations vertes innovantes.",
+      date: "15 mars 2024",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=400&h=250&fit=crop&crop=center",
-      title: "Innovative Health Solutions for Community Wellbeing",
-      description:
-        "As Quantified Ventures celebrates 10 years of pioneering work developing novel solutions to improve the well-being of people and planet, we look back at some of our notable achievements and look ahead to how we are building for the future with new partnerships, projects, and innovations. Learn more about how QV’s top-notch team continues to think big, collaborate with bold pioneers, and implement investible solutions that drive measurable outcomes.",
-      link: "#",
+      title: "Partenaire avec la Ville SA pour 4 projets verts",
+      description: "GreenOCity accompagne la Ville SA dans le financement de projets de performance énergétique et de désartificialisation des sols.",
+      date: "2 février 2024",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=400&h=250&fit=crop&crop=center",
-      title: "Partnerships Driving Impact in Environmental Sectors",
-      description:
-        "CEO Tee Thomas reflects back on 2024, her first year as CEO and QV's 10th year of breaking through barriers to drive impact for people and planet.",
-      link: "#",
+      title: "Compensation carbone locale : une solution anti-greenwashing",
+      description: "Notre approche permet aux entreprises de compenser leurs émissions localement, avec des bénéfices mesurables pour les communautés.",
+      date: "10 janvier 2024",
     },
   ];
 
-  const renderNewsItem = ({ image, title, description, link }: NewsItem) => {
-    return (
-      <div className="flex flex-col md:flex-row w-full items-start md:items-center  ">
-        <div className="relative w-full md:w-[40%] h-72">
-          <Image
-            src={image}
-            alt={title}
-            fill
-            className=" w-full h-full object-cover "
-          />
-        </div>
-        <div className="flex flex-col items-start w-full md:w-[60%] p-2 md:ml-12">
-          <h3 className="text-lg md:text-2xl font-bold text-cyan-500 mb-8">
-            {title}
-          </h3>
-          <p className="text-lg md:text-xl text-gray-500 mb-4">{description}</p>
-          <a
-            href={link}
-            className="text-cyan-600 hover:text-cyan-700 transition-colors"
-          >
-            Read more
-          </a>
-        </div>
-      </div>
-    );
-  };
-
   return (
-    <div className="flex flex-col items-center justify-center w-full md:max-w-11/12 mx-auto pb-10 md:pb-16 px-4">
-      <h1 className="capitalize text-2xl md:text-4xl font-bold text-gray-700">
-        Quantified ventures news
-      </h1>
-      <div className="flex flex-col mt-10">
-        {latestNews.map((news, index) => (
-          <div key={index} className="w-full mb-6">
-            {renderNewsItem(news)}
-          </div>
-        ))}
+    <div className="py-16 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+            Actualités GreenOCity
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Découvrez nos dernières initiatives et succès
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {newsItems.map((item, index) => (
+            <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div className="h-48 bg-green-100 rounded-lg mb-4 flex items-center justify-center">
+                <Leaf className="w-12 h-12 text-green-600" />
+              </div>
+              <span className="text-sm text-gray-500">{item.date}</span>
+              <h3 className="text-xl font-bold text-gray-800 mt-2 mb-3">{item.title}</h3>
+              <p className="text-gray-600 mb-4">{item.description}</p>
+              <a href="#" className="text-green-600 font-medium hover:text-green-700">
+                Lire la suite →
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-50">
+            Voir toutes les actualités
+          </Button>
+        </div>
       </div>
-      <Separator className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mt-10" />
-      
     </div>
   );
 }
 
-function OurWork() {
-  const workList = [
+function Benefits() {
+  const benefits = [
     {
-      image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=400&h=250&fit=crop&crop=center",
-      title: "Innovative Health Solutions for Community Wellbeing",
-      link: "#",
+      title: "Pour les villes",
+      description: "Financement complémentaire pour des projets verts sans augmentation d'impôts",
+      icon: <Building className="w-8 h-8 text-green-600" />,
     },
     {
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=250&fit=crop&crop=center",
-      title: "Quantified Ventures Launches New Climate Finance Solutions",
-      link: "#",
+      title: "Pour les entreprises",
+      description: "Compensation carbone locale avec traçabilité et impact social mesurable",
+      icon: <TrendingUp className="w-8 h-8 text-green-600" />,
     },
     {
-      image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=400&h=250&fit=crop&crop=center",
-      title: "Partnerships Driving Impact in Environmental Sectors",
-      link: "#",  
+      title: "Pour les citoyens",
+      description: "Amélioration de la qualité de vie et de la santé environnementale",
+      icon: <Users className="w-8 h-8 text-green-600" />,
     },
-    {
-      image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=400&h=250&fit=crop&crop=center",
-      title: "Innovative Health Solutions for Community Wellbeing",
-      link: "#",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=250&fit=crop&crop=center",
-      title: "Quantified Ventures Launches New Climate Finance Solutions",
-      link: "#",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=400&h=250&fit=crop&crop=center",
-      title: "Partnerships Driving Impact in Environmental Sectors",
-      link: "#",  
-    }
   ];
 
-  const RenderWorkItem = ({ image, title, link }: { image: string, title: string, link: string }) => {
-    return(
-      <div className="flex flex-col w-full items-center  ">
-        <Image src={image} alt={title} width={500} height={250} objectFit="cover" />
-        <p className="text-base text-gray-500 pt-2">{title}</p>
-      </div>
-    )
-  }
+  return (
+    <div className="py-16 bg-white">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+            Les avantages GreenOCity
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Une solution gagnant-gagnant pour tous les acteurs
+          </p>
+        </div>
 
-  return(
-    <div className="flex flex-col w-full jusct-center items-center  md:max-w-9/12 mx-auto pb-16 px-4">
-      <h1 className="capitalize text-2xl md:text-4xl font-bold text-gray-700">Our work in action</h1>
-      <p className="text-lg md:text-xl text-gray-500 text-center py-6">By incentivizing collaboration, measuring and monetizing key outcomes, and engaging subject matter experts in solution design and development we chart the course to innovation, investment, and impact. </p>
-      <div className="grid grid-cols-1 md:grid-cols-2  gap-6">
-        {workList.map((work, index) => (
-          <RenderWorkItem key={index} {...work} />
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {benefits.map((benefit, index) => (
+            <div key={index} className="text-center p-6">
+              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                {benefit.icon}
+              </div>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">{benefit.title}</h3>
+              <p className="text-gray-600">{benefit.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
-function Benefits () {
-  const benefitsList = [
-    {
-      image: "https://images.unsplash.com/photo-1689757762690-2f09ec1b7228?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8",
-      title: "Conseils",
-      description: "Nous évaluons la faisabilité d'entreprendre un financement basé sur les résultats et des solutions de financement, et concevons des structures novatrices pour résoudre des défis environnementaux, sanitaires et sociaux prolongés.",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1749482843703-3895960e7d63?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyfHx8ZW58MHx8fHx8",
-      title: "Développement de Projets",
-      description: "En travaillant avec des partenaires gouvernementaux, associatifs et corporatifs, nous développons des programmes et projets qui créent des bénéfices environnementaux, sanitaires et sociaux pour les personnes et les écosystèmes.",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1695019947916-c3e789ba0e2b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJlbGxlJTIwaW1hZ2UlMjBkZSUyMGxhJTIwbmF0dXJlfGVufDB8fDB8fHww",
-      title: "Capitalisation",
-      description: "Nous offrons des solutions de financement et de fonds créatives pour les organisations publiques et privées cherchant des investisseurs et souhaitant utiliser des approches basées sur les résultats pour résoudre des problèmes environnementaux, sanitaires et sociaux critiques.",
-    },
-  ];
-
-  const RenderBenefitItem = ({ image, title, description }: { image: string, title: string, description: string }) => {
-    return(
-      <div className="flex flex-col w-full items-start  ">
-        <div className="relative rounded-bl-2xl rounded-tr-2xl w-full h-64 overflow-hidden">
-          <Image src={image} alt={title} fill className="w-full h-full object-cover" />
+function ContactSection() {
+  return (
+    <div className="py-16 bg-green-600 text-white">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+            Prêt à transformer votre ville ?
+          </h2>
+          <p className="text-lg max-w-3xl mx-auto">
+            Contactez-nous pour discuter de vos projets verts et découvrir comment GreenOCity peut vous aider.
+          </p>
         </div>
-        <h3 className="text-lg md:text-2xl font-bold text-cyan-800 py-4">{title}</h3>
-        <p className="text-base md:text-lg text-gray-500 pt-2">{description}</p>
-      </div>
-    )
-  }
 
-  return(
-    <div className="flex flex-col w-full jusct-center items-center max-w-11/12 mx-auto pb-16 px-4  md:mt-10">
-      <h1 className="capitalize text-2xl md:text-4xl font-bold text-gray-700">Benefits of Outcomes-Based Finance</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 mt-6 md:mt-12 gap-6">
-        {benefitsList.map((benefit, index) => (
-          <RenderBenefitItem key={index} {...benefit} />
-        ))}
+        <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg p-8 text-gray-800">
+          <h3 className="text-xl font-bold mb-6 text-center">Contactez-nous</h3>
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium mb-1">Nom</label>
+              <input type="text" className="w-full px-4 py-2 border rounded-lg" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-1">Email</label>
+              <input type="email" className="w-full px-4 py-2 border rounded-lg" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-1">Message</label>
+              <textarea rows={4} className="w-full px-4 py-2 border rounded-lg"></textarea>
+            </div>
+            <Button className="w-full bg-green-600 hover:bg-green-700">
+              Envoyer
+            </Button>
+          </div>
+        </div>
+
+        <div className="text-center mt-12">
+          <p className="mb-4">Ou contactez-nous directement :</p>
+          <p className="font-bold">Iphigénie Ngounou</p>
+          <p>contact@greenocity.fr</p>
+          <p>www.greenocity.fr</p>
+        </div>
       </div>
-      <Button variant="cyan" size="large" className="mt-10">
-        More News
-      </Button>
     </div>
-  )
+  );
 }
