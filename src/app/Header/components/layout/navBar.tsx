@@ -64,31 +64,31 @@ export default function NavBar() {
     {
       key: "Villes",
       icon: MapPinHouse,
-      hasDropdown: true,
+      hasDropdown: false,
       dropdownItems: [
         { key: "community Finance", url: "/climate/components/community" },
         { key: "green Banks", url: "/climate/components/green-banks" },
         { key: "natural Climate Solutions", url: "/climate/components/natural" },
         { key: "outdoor Recreation", url: "/climate/components/outdoor" },
       ],
-      urlKey: "/climate",
+      urlKey: "/villes",
     },
     {
       key: "Bâtiments",
       icon: Hotel,
-      hasDropdown: true,
+      hasDropdown: false,
       dropdownItems: [
         { key: "cbo Sustainability", url: "/health/components/cbo" },
         { key: "mco Market Growth", url: "/health/components/mco" },
         { key: "sdoh Strategy", url: "/health/components/sdoh" },
         { key: "state Medicaid", url: "/health/components/state" },
       ],
-      urlKey: "/health",
+      urlKey: "/batiments",
     },
     {
       key: "impact",
       icon: Target,
-      hasDropdown: true,
+      hasDropdown: false,
       dropdownItems: [
         { key: "case Studies", url: "/impact/components/case-studies" },
         { key: "impact Reports", url: "/impact/components/impact-report" },
@@ -267,7 +267,7 @@ export default function NavBar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <div className="flex items-center space-x-2 bg-white py-2 px-7 rounded-br-[100px] rounded-tl-[100px]">
             <Link href="/">
-              <span className="text-5xl font-bold text-[#2AAA8A]">GreenoCity</span>
+              <span className="text-5xl font-bold text-[#2AAA8A]">GreenOCity</span>
             </Link>
           </div>
 
