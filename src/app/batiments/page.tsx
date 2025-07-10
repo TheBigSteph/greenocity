@@ -63,9 +63,9 @@ export default function BatimentsPage() {
     <div className="bg-gray-50">
       {/* Hero Section */}
       <HeroSection
-        title="Solutions pour les bâtiments"
+        title="Verdir ma ville"
         imageUrl="/images/cover.jpg"
-        subtitle="Transformez votre patrimoine bâti en actif écologique et économique"
+        subtitle="Là où la Nature reprend ses droits, la Ville respire"
       />
       {/* <div className="relative h-96">
         <Image
@@ -90,23 +90,38 @@ export default function BatimentsPage() {
       {/* Introduction */}
       <section className="py-16 px-4 max-w-4xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-6">
-          Bâtiments performants, villes résilientes
+          La ville respire. Agissons vite !
         </h2>
+        <p className="text-xl text-gray-600 mb-10">
+          Imaginez : des villes où la nature s'épanouit, où l'air est pur, où la
+          qualité de vie est améliorée. C'est la vision de Greenocity. Mais
+          cette vision ne deviendra réalité que si nous agissons ensemble.
+          Chaque arbre planté, chaque espace vert créé, chaque initiative
+          écologique est un pas vers un avenir plus vert, plus sain, plus
+          durable.
+        </p>
         <p className="text-xl text-gray-600 mb-8">
-          Les bâtiments représentent 40% des consommations énergétiques en
-          France. GreenOCity propose des solutions clés en main pour améliorer
-          leur performance environnementale grâce à des mécanismes de
-          financement innovants.
+          Rejoignez le mouvement Greenocity. Soyez le changement que vous voulez
+          voir dans le monde. Ensemble, rendons nos villes plus vivantes, plus
+          respirable, plus vertes.{" "}
         </p>
         <div className="w-24 h-1 bg-green-600 mx-auto"></div>
       </section>
 
       {/* Solutions Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white ">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Nos solutions bâtiments
-          </h2>
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold mb-6">Nos solutions bâtiments</h2>
+
+            <p className="text-xl text-gray-600 ">
+              Nos solutions techniques pour réduire l’empreinte écologiques :
+              Développer localement des offres de compensation carbones via des
+              projets verts permettant d’éviter, de réduire ou de de stocker les
+              émissions carbone.
+            </p>
+
+          </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {solutions.map((solution, index) => (
@@ -185,7 +200,7 @@ export default function BatimentsPage() {
       </section>
 
       {/* Case Studies */}
-      <section className="py-16 px-4 max-w-6xl mx-auto">
+      {/* <section className="py-16 px-4 max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12">Études de cas</h2>
 
         <div className="space-y-8">
@@ -214,10 +229,10 @@ export default function BatimentsPage() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section className="py-16 bg-green-700 text-white">
+      {/* <section className="py-16 bg-green-700 text-white">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl font-bold mb-6">
             Un projet pour votre patrimoine bâti ?
@@ -230,7 +245,7 @@ export default function BatimentsPage() {
             Demander un audit
           </Button>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
