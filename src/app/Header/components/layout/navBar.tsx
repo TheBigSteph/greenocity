@@ -56,7 +56,7 @@ export default function NavBar() {
 
   const navItems: NavItem[] = [
     {
-      key: "about",
+      key: "A propos",
       icon: Lightbulb,
       hasDropdown: false,
       urlKey: "/about",
@@ -265,8 +265,8 @@ export default function NavBar() {
     <header className="absolute top-0 left-0 w-full bg-transparent z-50 py-10 px-12 ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <div className="flex items-center space-x-2 bg-white py-2 px-7 rounded-br-[100px] rounded-tl-[100px]">
-            <Link href="/">
+          <div className="flex items-center justify-center bg-white py-2 px-7 rounded-br-[100px] rounded-tl-[100px]">
+            <Link href="/" >
               <span className="text-5xl font-bold text-[#2AAA8A]">GreenOCity</span>
             </Link>
           </div>

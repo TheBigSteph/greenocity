@@ -54,12 +54,12 @@ export const OurVision = () => {
     },
   ];
 
-  const teamStats = [
-    { number: "10+", label: "Projets verts financés" },
-    { number: "5M€", label: "De fonds mobilisés" },
-    { number: "15", label: "Villes accompagnées" },
-    { number: "100%", label: "Engagement écologique" },
-  ];
+  // const teamStats = [
+  //   { number: "10+", label: "Projets verts financés" },
+  //   { number: "5M€", label: "De fonds mobilisés" },
+  //   { number: "15", label: "Villes accompagnées" },
+  //   { number: "100%", label: "Engagement écologique" },
+  // ];
 
   const SolutionCard = ({ title, image, description, icon }: PropsCard) => (
     <div className="relative group overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -122,7 +122,7 @@ export const OurVision = () => {
       </div>
 
       {/* Team Stats */}
-      <div className="py-16 bg-white">
+      {/* <div className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {teamStats.map((stat, index) => (
@@ -135,7 +135,7 @@ export const OurVision = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Mission Section */}
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
@@ -177,7 +177,7 @@ export const OurVision = () => {
         paragraphs={[
           "Fondée en 2022, GreenOCity est née de la rencontre entre experts de la finance verte et acteurs du développement urbain durable. Nous avons constaté que les villes manquaient cruellement de ressources pour financer leur transition écologique, alors même que des solutions existaient.",
           "Notre innovation ? Créer un pont entre les entreprises soumises à la DPEF (Déclaration de Performance Extra-Financière) et les projets verts locaux, grâce au mécanisme des Green Bonds.",
-          "Aujourd'hui, notre équipe pluridisciplinaire travaille sans relâche pour accélérer la transition écologique des territoires, avec déjà plus de 15 villes accompagnées dans leurs projets de résilience.",
+          "Aujourd'hui, notre équipe pluridisciplinaire travaille sans relâche pour accélérer la transition écologique des territoires, et les accompagner dans leurs projets de résilience.",
         ]}
       />
 
