@@ -25,6 +25,7 @@ import {
   MapPinHouse,
   Target,
   Lightbulb,
+  Coins,
   Loader2,
 } from "lucide-react";
 import Link from "next/link";
@@ -86,8 +87,8 @@ export default function NavBar() {
       urlKey: "/batiments",
     },
     {
-      key: "impact",
-      icon: Target,
+      key: "financement",
+      icon: Coins,
       hasDropdown: false,
       dropdownItems: [
         { key: "case Studies", url: "/impact/components/case-studies" },
@@ -267,7 +268,7 @@ export default function NavBar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <div className="flex items-center justify-center bg-white py-2 px-7 rounded-br-[100px] rounded-tl-[100px]">
             <Link href="/" >
-              <span className="text-5xl font-bold text-[#2AAA8A]">GreenOCity</span>
+              <span className="text-xl md:text-3xl max-lg:text-5xl font-bold text-[#2AAA8A]">GreenOCity</span>
             </Link>
           </div>
 
