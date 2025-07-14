@@ -52,7 +52,7 @@ export default function VillesPage() {
       <HeroSection
         title="Solutions pour les villes"
         imageUrl="/images/cover.jpg"
-        subtitle="GreenOCity accompagne les collectivités dans le financement de leur transition écologique"
+        subtitle="Greenocity accompagne les collectivités dans le financement et la mise en œuvre de leurs projets verts de réduction d’empreintes écologiques"
       />
       {/* <div className="relative h-96">
         <Image

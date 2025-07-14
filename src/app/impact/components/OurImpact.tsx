@@ -157,7 +157,7 @@ export function OurImpact() {
               Pour les bâtiments
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">
-              CEE et MaPrimeRénov'
+              CEE et MaPrimeRénov
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Deux dispositifs complémentaires qui offrent des avantages pour la rénovation énergétique des logements

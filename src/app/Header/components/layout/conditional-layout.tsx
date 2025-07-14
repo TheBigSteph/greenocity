@@ -231,8 +231,8 @@ export const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-white">Contact</h3>
             <address className="not-italic text-green-100 space-y-2">
-              <p>123 Rue de l'Écologie</p>
-              <p>75000 Paris, France</p>
+              <p>25 rue du Maréchal Foch</p>
+              <p>78000 Versailles, France</p>
               <div className="flex items-center mt-4">
                 <Mail className="w-5 h-5 mr-2" />
                 <a
