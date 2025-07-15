@@ -2,6 +2,7 @@ import { Leaf, Target, Globe, Users, BarChart2, Handshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
+import {Card, CardHeader, CardTitle, CardDescription, CardContent} from "@/components/ui/card"
 
 export default function VillesPage() {
   const cityProjects = [
@@ -45,6 +46,41 @@ export default function VillesPage() {
       impact: "5 projets lancés en 18 mois avec création de 50 emplois locaux"
     }
   ];
+
+  const Solutions = [
+    {
+      title: "Isolation thermique",
+      desc1 : "Isoler la toiture: Une bonne isolation du toit peut réduire significativement les pertes de chaleur.",
+      desc2: "Isoler les murs: L'isolation des murs extérieurs ou intérieurs aide à maintenir une température confortable tout en réduisant les besoins en chauffage.",
+      desc3: "Isoler le sol: L'isolation des sols peut également contribuer à diminuer les déperditions thermiques.",
+    },
+    {
+      title: "Systèmes de chauffage efficaces",
+      desc1: "Installer une chaudière hybride: Combine une chaudière à gaz avec une pompe à chaleur pour optimiser la consommation d'énergie.",
+      desc2: "Utiliser une pompe à chaleur (PAC): Ces systèmes sont écologiques et très performants, car ils exploitent les ressources renouvelables pour le chauffage.",
+      desc3: "Chauffage au bois: Une option durable qui peut réduire les coûts de chauffage tout en étant respectueuse de l'environnement."
+    },
+    {
+      title: "Amélioration des fenêtres",
+      desc1: "Remplacer les fenêtres simples par des fenêtres à double vitrage: Cela réduit les pertes de chaleur et améliore l'efficacité énergétique.",
+      desc2: "Installer des volets ou des stores: Ils peuvent aider à réguler la température intérieure en été comme en hiver.",
+    },
+    {
+      title: "Équipements énergétiques",
+      desc1: "Utiliser des appareils électroménagers économes en énergie: Choisir des appareils classés A++ ou A+++ pour réduire la consommation d'électricité.",
+      desc2: "Installer des thermostats intelligents: Ils permettent de mieux gérer le chauffage et la climatisation en fonction des besoins réels.",
+    },
+    {
+      title: "Énergies renouvelables",
+      desc1: "Installer des panneaux solaires: Pour produire de l'électricité ou de l'eau chaude, réduisant ainsi la dépendance aux énergies fossiles.",
+      desc2: "Utiliser des systèmes de récupération de chaleur: Ces systèmes récupèrent la chaleur des eaux usées ou de l'air pour préchauffer l'eau ou l'air entrant."
+    },
+    {
+      title: "Rénovation énergétique",
+      desc1: "Effectuer un audit énergétique: Cela permet d'identifier les points faibles et de prioriser les travaux à réaliser.",
+      desc2: "Profiter des aides financières: Des dispositifs comme MaPrimeRénov' ou des crédits d'impôt peuvent aider à financer les travaux d'amélioration énergétique.",
+    }
+  ]
 
   return (
     <div className="bg-gray-50">
@@ -132,6 +168,22 @@ export default function VillesPage() {
                   <p className="text-gray-600">{project.description}</p>
                 </div>
               </div>
+            ))}
+          </div>
+
+          <h2 className="text-xl font-semibold text-center my-12">Pour améliorer la performance énergétique des logements et des bâtiments, plusieurs solutions efficaces peuvent être mises en œuvre. </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Solutions.map((solution, index) => (
+              <Card key={index}>
+                <CardHeader>
+                  <CardTitle>{solution.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p>{solution.desc1}</p>
+                  <p>{solution.desc2}</p>
+                  <p>{solution.desc3}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { BarChart2, Globe, Handshake, Leaf, Target, Users } from "lucide-react";
 import Image from "next/image";
 import StorySection from "./StorySection";
+import { Badge } from "@/components/ui/badge";
 
 type PropsCard = {
   title: string;
@@ -91,15 +92,28 @@ export const OurVision = () => {
       />
 
       {/* Values Section */}
-      <div className="bg-green-50 py-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-              Nos valeurs fondamentales
-            </h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              Ce qui guide chacune de nos actions et décisions
-            </p>
+      <div className=" py-16">
+        <div className=" max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-2 mb-16">
+            <div>
+              <Badge className="bg-green-800">Nos valeurs</Badge>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 my-4">
+                Nos valeurs fondamentales
+              </h2>
+              <p className="text-lg text-gray-600 mx-auto">
+                Ce qui guide chacune de nos actions et décisions
+              </p>
+            </div>
+
+            <div>
+              {/* <Image
+                src="/images/cover.jpg"
+                alt="Nos valeurs"
+                width={100}
+                height={400}
+                className="rounded-lg shadow-md"
+              /> */}
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -110,7 +124,7 @@ export const OurVision = () => {
               >
                 <div className="flex items-center mb-4">
                   {value.icon}
-                  <h3 className="text-xl font-bold text-gray-800 ml-3">
+                  <h3 className="text-xl font-bold text-green-600 ml-3">
                     {value.title}
                   </h3>
                 </div>
@@ -121,51 +135,51 @@ export const OurVision = () => {
         </div>
       </div>
 
-      {/* Team Stats */}
-      {/* <div className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {teamStats.map((stat, index) => (
-              <div key={index} className="p-6">
-                <p className="text-3xl md:text-4xl font-bold text-green-600 mb-2">
-                  {stat.number}
-                </p>
-                <p className="text-gray-600">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div> */}
-
       {/* Mission Section */}
-      <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-        <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-            Notre raison d'être
-          </h2>
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-            GreenOCity est née d'un constat simple : les villes manquent de
-            ressources pour financer leur transition écologique, tandis que les
-            entreprises cherchent des solutions locales de compensation carbone
-            crédibles.
-          </p>
-        </div>
+      <div className="relative  px-6 py-16 md:py-24">
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-100 via-green-800/50 to-gray-100"></div>
+        <div className="relative max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <Badge className="bg-green-800">Qui sommes-nous?</Badge>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 my-4">
+              Notre raison d'être
+            </h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+              GreenOCity est née d'un constat simple : les villes manquent de
+              ressources pour financer leur transition écologique, tandis que
+              les entreprises cherchent des solutions locales de compensation
+              carbone crédibles.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {aboutList.map((value, index) => (
-            <div
-              key={index}
-              className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow"
-            >
-              <div className="flex items-center mb-4">
-                {value.icon}
-                <h3 className="text-xl font-bold text-gray-800 ml-3">
-                  {value.title}
-                </h3>
-              </div>
-              <p className="text-gray-600">{value.description}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8  items-center justify-center">
+            <div className="">
+              <Image
+                src="/images/cover.jpg"
+                alt="Notre mission"
+                width={600}
+                height={800}
+                className="rounded-l-lg "
+              />
             </div>
-          ))}
+
+            <div className=" grid grid-cols-1 md:grid-cols-2 gap-8 md:-ml-62 justify-center ietms-center ">
+              {aboutList.map((value, index) => (
+                <div
+                  key={index}
+                  className="bg-white/90 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+                >
+                  <div className="flex items-center mb-4">
+                    {value.icon}
+                    <h3 className="text-xl font-bold text-green-600 ml-3">
+                      {value.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-600">{value.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -182,48 +196,51 @@ export const OurVision = () => {
       />
 
       {/* Team Section */}
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-10 text-center">
-          Notre équipe
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-          {[
-            {
-              name: "Iphigénie Ngounou",
-              role: "CEO & Fondatrice",
-              image: "/images/team.jpg",
-            },
-            {
-              name: "Lucas Dubois",
-              role: "Directeur Financier",
-              image: "/images/team.jpg",
-            },
-            {
-              name: "Emma Lefevre",
-              role: "Responsable Projets",
-              image: "/images/team.jpg",
-            },
-            {
-              name: "Paul Moreau",
-              role: "Expert Carbone",
-              image: "/images/team.jpg",
-            },
-          ].map((member, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col items-center bg-white rounded-xl shadow-md p-6"
-            >
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-28 h-28 rounded-full object-cover mb-4 border-4 border-green-100"
-              />
-              <h3 className="text-lg font-semibold text-gray-800">
-                {member.name}
-              </h3>
-              <p className="text-green-700 text-sm">{member.role}</p>
-            </div>
-          ))}
+      <div className="relative ">
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-100 to-green-800  opacity-30 blur-2xl"></div>
+        <div className="relative  max-w-6xl mx-auto px-6 py-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-10 text-center">
+            Notre équipe
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              {
+                name: "Iphigénie Ngounou",
+                role: "CEO & Fondatrice",
+                image: "/images/team.jpg",
+              },
+              {
+                name: "Lucas Dubois",
+                role: "Directeur Financier",
+                image: "/images/team.jpg",
+              },
+              {
+                name: "Emma Lefevre",
+                role: "Responsable Projets",
+                image: "/images/team.jpg",
+              },
+              {
+                name: "Paul Moreau",
+                role: "Expert Carbone",
+                image: "/images/team.jpg",
+              },
+            ].map((member, idx) => (
+              <div
+                key={idx}
+                className="flex flex-col items-center bg-white/80 rounded-xl shadow-md p-6"
+              >
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-28 h-28 rounded-full object-cover mb-4 border-4 border-green-100"
+                />
+                <h3 className="text-lg font-semibold text-gray-800">
+                  {member.name}
+                </h3>
+                <p className="text-green-700 text-sm">{member.role}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

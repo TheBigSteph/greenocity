@@ -13,7 +13,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   title,
   subtitle,
 }) => (
-  <div className="relative w-full h-96 overflow-hidden flex items-center justify-center">
+  <div className="relative w-full h-[450px] mb-16 overflow-hidden flex items-center justify-center">
     {/* Parallax wrapper */}
     <div
       className="absolute inset-0 will-change-transform"
@@ -34,7 +34,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     {/* Content */}
     <div className="relative z-10 flex flex-col items-center justify-center w-full h-full text-white px-4 md:py-24 md:px-24 text-center">
       <h1
-        className="text-4xl md:text-5xl font-bold mb-6"
+        className="text-4xl md:text-5xl font-bold my-6"
         style={{ textShadow: "0 2px 16px rgba(0,0,0,0.5)" }}
       >
         {title}
