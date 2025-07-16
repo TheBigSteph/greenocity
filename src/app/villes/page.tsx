@@ -206,7 +206,7 @@ export default function VillesPage() {
       <section className="py-16 px-4 max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <Badge className="bg-green-800">Performance énergétique</Badge>
-          <h2 className="text-3xl font-bold text-gray-800 my-6">
+          <h2 className="text-xl md:text-3xl font-bold text-gray-800 my-6">
             Amélioration de la performance énergétique
           </h2>
           <p className="text-xl  max-w-2xl mx-auto ">
@@ -240,7 +240,7 @@ export default function VillesPage() {
         <div className="relative py-16 px-4 max-w-6xl mx-auto">
           <div className="flex flex-col items-center mb-12 ">
             <Badge className="bg-green-800">Qu'avons-nous déjà fait?</Badge>
-            <h2 className="text-3xl font-bold text-center mt-4">
+            <h2 className="text-xl md:text-3xl font-bold text-gray-800 text-center mt-4">
               Nos réalisations
             </h2>
           </div>
