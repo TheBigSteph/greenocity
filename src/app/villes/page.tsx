@@ -125,7 +125,7 @@ export default function VillesPage() {
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white p-6 rounded-lg shadow-md">
+          <div className="bg-white/30 p-6 rounded-lg shadow-md">
             <div className="text-green-600 mb-4">
               <Users className="w-8 h-8" />
             </div>
@@ -138,7 +138,7 @@ export default function VillesPage() {
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-md">
+          <div className="bg-white/30 p-6 rounded-lg shadow-md">
             <div className="text-green-600 mb-4">
               <BarChart2 className="w-8 h-8" />
             </div>
@@ -151,7 +151,7 @@ export default function VillesPage() {
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-md">
+          <div className="bg-white/30 p-6 rounded-lg shadow-md">
             <div className="text-green-600 mb-4">
               <Globe className="w-8 h-8" />
             </div>
@@ -180,7 +180,7 @@ export default function VillesPage() {
             {cityProjects.map((project, index) => (
               <div
                 key={index}
-                className="bg-white/90 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                className="bg-white/30 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
               >
                 <div className="h-48 relative">
                   <Image
@@ -200,72 +200,100 @@ export default function VillesPage() {
               </div>
             ))}
           </div>
-          
-          
         </div>
       </section>
 
-      <section  className="py-16 px-4 max-w-6xl mx-auto">
+      <section className="py-16 px-4 max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <Badge className="bg-green-800">Performance énergétique</Badge>
-        <h2 className="text-3xl font-bold text-gray-800 my-6">Amélioration de la performance énergétique</h2>
+          <h2 className="text-3xl font-bold text-gray-800 my-6">
+            Amélioration de la performance énergétique
+          </h2>
           <p className="text-xl  max-w-2xl mx-auto ">
             Pour améliorer la performance énergétique des logements et des
             bâtiments, plusieurs solutions efficaces peuvent être mises en
             œuvre.{" "}
           </p>
-
         </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {Solutions.map((solution, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <CardTitle>{solution.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p>{solution.desc1}</p>
-                  <p>{solution.desc2}</p>
-                  <p>{solution.desc3}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          {Solutions.map((solution, index) => (
+            <Card key={index} className="bg-white/30">
+              <CardHeader>
+                <CardTitle className="text-lg font-medium text-green-600">
+                  {solution.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p>{solution.desc1}</p>
+                <p>{solution.desc2}</p>
+                <p>{solution.desc3}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </section>
 
       {/* Success Stories */}
-      <section className="py-16 px-4 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          Nos réalisations
-        </h2>
+      <section className="relative ">
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-100 via-green-800/50 to-gray-100"></div>
 
-        <div className="space-y-8">
-          {successStories.map((story, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 md:p-8 rounded-lg shadow-md"
-            >
-              <h3 className="text-2xl font-bold text-green-700 mb-4">
-                {story.city}
-              </h3>
+        <div className="relative py-16 px-4 max-w-6xl mx-auto">
+          <div className="flex flex-col items-center mb-12 ">
+            <Badge className="bg-green-800">Qu'avons-nous déjà fait?</Badge>
+            <h2 className="text-3xl font-bold text-center mt-4">
+              Nos réalisations
+            </h2>
+          </div>
 
-              <div className="grid md:grid-cols-3 gap-6">
+          <div className="bg-white/30 flex justify-around p-10 rounded-tl-2xl rounded-br-2xl gap-16">
+            {successStories.map((story, index) => (
+              <div key={index} className="grid gap-6">
+                <h3 className="text-2xl font-bold text-green-700 mb-4">
+                  {story.city}
+                </h3>
                 <div>
-                  <h4 className="font-semibold mb-2">Défi initial</h4>
-                  <p className="text-gray-600">{story.challenge}</p>
+                  <h4 className="text-black font-semibold mb-2">
+                    Défi initial
+                  </h4>
+                  <p
+                    className={` p-6 rounded-tl-2xl rounded-br-2xl  ${
+                      index === 0
+                        ? "bg-white text-gray-600"
+                        : "bg-green-600 text-white"
+                    }`}
+                  >
+                    {story.challenge}
+                  </p>
                 </div>
 
                 <div>
                   <h4 className="font-semibold mb-2">Solution GreenOCity</h4>
-                  <p className="text-gray-600">{story.solution}</p>
+                  <p
+                    className={`p-6 rounded-tl-2xl rounded-br-2xl  ${
+                      index === 0
+                        ? "bg-white text-gray-600"
+                        : "bg-green-600 text-white"
+                    }`}
+                  >
+                    {story.solution}
+                  </p>
                 </div>
 
                 <div>
                   <h4 className="font-semibold mb-2">Impact mesuré</h4>
-                  <p className="text-gray-600">{story.impact}</p>
+                  <p
+                    className={`p-6 rounded-tl-2xl rounded-br-2xl  ${
+                      index === 0
+                        ? "bg-white text-gray-600"
+                        : "bg-green-600 text-white"
+                    }`}
+                  >
+                    {story.impact}
+                  </p>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
