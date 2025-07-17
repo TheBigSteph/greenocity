@@ -2,6 +2,12 @@ import HeroSection from "@/components/HeroSection";
 import { Button } from "@/components/ui/button";
 import { Droplet, Home, Sun } from "lucide-react";
 import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+
+import { Assistant } from "./components/assistant";
+import { Renov } from "./components/renov";
+import { Advantages } from "./components/advantages";
 
 export default function BatimentsPage() {
   const solutions = [
@@ -14,6 +20,7 @@ export default function BatimentsPage() {
         "Réduction jusqu'à 40% des consommations",
         "Amélioration du confort des occupants",
         "Valorisation du patrimoine",
+        "Verdissements des véhicules thermiques"
       ],
     },
     {
@@ -25,6 +32,7 @@ export default function BatimentsPage() {
         "Réduction de la consommation d'eau potable",
         "Gestion des eaux pluviales",
         "Préservation des ressources",
+        "gestion de la biodiversité",
       ],
     },
     {
@@ -36,6 +44,7 @@ export default function BatimentsPage() {
         "Autonomie énergétique partielle",
         "Réduction des émissions GES",
         "Stabilité des coûts énergétiques",
+        "Traitement durable des terres et des déchets"
       ],
     },
   ];
@@ -60,32 +69,13 @@ export default function BatimentsPage() {
   ];
 
   return (
-    <div className="bg-gray-50">
+    <div className="">
       {/* Hero Section */}
       <HeroSection
         title="Verdir ma ville"
         imageUrl="/images/cover.jpg"
         subtitle="Là où la Nature reprend ses droits, la Ville respire"
       />
-      {/* <div className="relative h-96">
-        <Image
-          src="/images/building-hero.jpg"
-          alt="Bâtiment durable"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <div className="text-center text-white px-4">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Solutions pour les bâtiments
-            </h1>
-            <p className="text-xl md:text-2xl max-w-2xl mx-auto">
-              Transformez votre patrimoine bâti en actif écologique et
-              économique
-            </p>
-          </div>
-        </div>
-      </div> */}
 
       {/* Introduction */}
       <section className="py-16 px-4 max-w-4xl mx-auto text-center">
@@ -108,11 +98,18 @@ export default function BatimentsPage() {
         <div className="w-24 h-1 bg-green-600 mx-auto"></div>
       </section>
 
+      <Assistant />
+      {/* Renovation Section */}
+      <Renov />
+
       {/* Solutions Section */}
-      <section className="py-16 bg-white ">
+      <section className="py-16 bg-fixed bg-[url('/images/fond.png')] bg-no-repeat bg-center bg-contain">
         <div className="max-w-6xl mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-6">Nos solutions bâtiments</h2>
+            <Badge className="bg-green-800">Solutions</Badge>
+            <h2 className="text-2xl md:text-3xl font-bold trext-gray-800 my-4">
+              Nos solutions bâtiments
+            </h2>
 
             <p className="text-xl text-gray-600 ">
               Nos solutions techniques pour réduire l’empreinte écologiques :
@@ -120,37 +117,39 @@ export default function BatimentsPage() {
               projets verts permettant d’éviter, de réduire ou de de stocker les
               émissions carbone.
             </p>
-
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {solutions.map((solution, index) => (
-              <div
-                key={index}
-                className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow"
-              >
-                <div className="flex items-center mb-4">
-                  <div className="bg-green-100 p-2 rounded-full mr-4">
-                    {solution.icon}
+              <Card key={index} className=" hover:shadow-md transition-shadow">
+                <CardContent>
+                  <div className="flex items-center mb-4">
+                    <div className="bg-green-100 p-2 rounded-full mr-4">
+                      {solution.icon}
+                    </div>
+                    <h3 className="text-xl text-green-600 font-bold">
+                      {solution.title}
+                    </h3>
                   </div>
-                  <h3 className="text-xl font-bold">{solution.title}</h3>
-                </div>
-                <p className="text-gray-600 mb-4">{solution.description}</p>
+                  <p className="text-gray-600 mb-4">{solution.description}</p>
 
-                <h4 className="font-semibold mb-2">Bénéfices :</h4>
-                <ul className="space-y-2">
-                  {solution.benefits.map((benefit, i) => (
-                    <li key={i} className="flex items-start">
-                      <span className="text-green-600 mr-2">✓</span>
-                      <span>{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                  <h4 className="font-bold  mb-2">Bénéfices :</h4>
+                  <ul className="space-y-2">
+                    {solution.benefits.map((benefit, i) => (
+                      <li key={i} className="flex items-start">
+                        <span className="text-green-600 mr-2">✓</span>
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
+
+      <Advantages />
 
       {/* Financing Section */}
       <section className="py-16 bg-green-50">

@@ -160,7 +160,7 @@ export function OurImpact() {
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               {greenAdvantages.map((advantage, index) => (
-                <Card key={index} className="flex text-center bg-white/70">
+                <Card key={index} className="flex text-center shadow-lg bg-white/70">
                   <CardContent className="">
                     <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
                     <span className="text-gray-700">
