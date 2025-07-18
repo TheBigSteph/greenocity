@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Assistant } from "./components/assistant";
 import { Renov } from "./components/renov";
 import { Advantages } from "./components/advantages";
+import { Examples } from "./components/examples";
 
 export default function BatimentsPage() {
   const solutions = [
@@ -103,15 +104,15 @@ export default function BatimentsPage() {
       <Renov />
 
       {/* Solutions Section */}
-      <section className="py-16 bg-fixed bg-[url('/images/fond.png')] bg-no-repeat bg-center bg-contain">
+      <section className="py-16 bg-fixed bg-[url('/images/fond.png')] bg-no-repeat bg-center bg-contain bg-green-800  ">
         <div className="max-w-6xl mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <Badge className="bg-green-800">Solutions</Badge>
-            <h2 className="text-2xl md:text-3xl font-bold trext-gray-800 my-4">
+            {/* <Badge className="bg-white">Solutions</Badge> */}
+            <h2 className="text-2xl md:text-3xl font-bold text-white my-4">
               Nos solutions bâtiments
             </h2>
 
-            <p className="text-xl text-gray-600 ">
+            <p className="text-xl text-white ">
               Nos solutions techniques pour réduire l’empreinte écologiques :
               Développer localement des offres de compensation carbones via des
               projets verts permettant d’éviter, de réduire ou de de stocker les
@@ -121,23 +122,23 @@ export default function BatimentsPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {solutions.map((solution, index) => (
-              <Card key={index} className=" hover:shadow-md transition-shadow">
-                <CardContent>
+              <Card key={index} className="bg-white/30 shadow-lg hover:shadow-md transition-shadow">
+                <CardContent className="text-white">
                   <div className="flex items-center mb-4">
                     <div className="bg-green-100 p-2 rounded-full mr-4">
                       {solution.icon}
                     </div>
-                    <h3 className="text-xl text-green-600 font-bold">
+                    <h3 className="text-xl font-bold">
                       {solution.title}
                     </h3>
                   </div>
-                  <p className="text-gray-600 mb-4">{solution.description}</p>
+                  <p className=" mb-4">{solution.description}</p>
 
-                  <h4 className="font-bold  mb-2">Bénéfices :</h4>
+                  <h4 className="font-bold text-green-800 mb-2">Bénéfices :</h4>
                   <ul className="space-y-2">
                     {solution.benefits.map((benefit, i) => (
                       <li key={i} className="flex items-start">
-                        <span className="text-green-600 mr-2">✓</span>
+                        <span className="text-green-800 mr-2">✓</span>
                         <span>{benefit}</span>
                       </li>
                     ))}
@@ -150,53 +151,8 @@ export default function BatimentsPage() {
       </section>
 
       <Advantages />
+      <Examples />
 
-      {/* Financing Section */}
-      <section className="py-16 bg-green-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-              <h2 className="text-3xl font-bold mb-6">Financement innovant</h2>
-              <p className="text-gray-600 mb-4">
-                GreenOCity propose des solutions de financement adaptées aux
-                projets de rénovation et construction durable :
-              </p>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <span className="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3">
-                    1
-                  </span>
-                  <span>Green Bonds pour collectivités</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3">
-                    2
-                  </span>
-                  <span>Contrats de performance énergétique</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3">
-                    3
-                  </span>
-                  <span>Mobilisation de fonds carbone locaux</span>
-                </li>
-              </ul>
-              <Button className="bg-green-600 hover:bg-green-700">
-                En savoir plus sur le financement
-              </Button>
-            </div>
-            <div className="md:w-1/2">
-              <Image
-                src="/images/financing-building.jpg"
-                alt="Financement bâtiment"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-md"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Case Studies */}
       {/* <section className="py-16 px-4 max-w-6xl mx-auto">

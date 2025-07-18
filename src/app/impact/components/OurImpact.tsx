@@ -104,7 +104,7 @@ export function OurImpact() {
 
         <div className="mb-12">
           <div className="grid md:grid-cols-2 gap-12">
-            <div>
+            <div className= "bg-[url('/images/feuilles.png')] bg-no-repeat bg-left bg-contain  ">
               <p className="flex text-green-600 font-bold mb-6">
                 <Leaf className="h-6 w-6 mr-2" />
                 Qu'est-ce qu'une obligation verte ?
@@ -115,19 +115,13 @@ export function OurImpact() {
                 à financer des projets ayant un bénéfice environnemental.
               </p>
 
-              <Image
-                src="/images/feuilles.png"
-                alt="Green Bond"
-                width={100}
-                height={50}
-              />
             </div>
             <Image
               src="/images/cover.avif"
               alt="Green Bond"
               width={600}
               height={600}
-              className="rounded-lg shadow-md"
+              className="rounded-tl-3xl rounded-br-3xl shadow-md"
             />
           </div>
 
@@ -160,7 +154,7 @@ export function OurImpact() {
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               {greenAdvantages.map((advantage, index) => (
-                <Card key={index} className="flex text-center shadow-lg bg-white/70">
+                <Card key={index} className="flex text-center shadow-lg bg-white/30">
                   <CardContent className="">
                     <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
                     <span className="text-gray-700">
@@ -204,7 +198,7 @@ export function OurImpact() {
                       {greenBondFeatures.slice(0, 3).map((value, index) => (
                         <div
                           key={index}
-                          className="bg-white/70 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+                          className="bg-white/30 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
                         >
                           <div className="flex items-center text-green-600 mb-4">
                             {value.icon}
@@ -237,7 +231,7 @@ export function OurImpact() {
                       {greenBondFeatures.slice(3, 5).map((value, index) => (
                         <div
                           key={index + 2}
-                          className="bg-white/70 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+                          className="bg-white/30 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
                         >
                           <div className="flex items-center text-green-600 mb-4">
                             {value.icon}
@@ -269,7 +263,7 @@ export function OurImpact() {
                       {greenBondFeatures.map((value, index) => (
                         <div
                           key={index}
-                          className="bg-white/70 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+                          className="bg-white/30 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
                         >
                           <div className="flex items-center text-green-600 mb-4">
                             {value.icon}
