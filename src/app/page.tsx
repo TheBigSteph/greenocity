@@ -2,9 +2,19 @@
 
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Play, Target, TrendingUp, Users, Leaf, Building, Globe } from "lucide-react";
+import {
+  Play,
+  Target,
+  TrendingUp,
+  Users,
+  Leaf,
+  Building,
+  Globe,
+} from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Home() {
   return (
@@ -42,7 +52,9 @@ function Hero() {
             Financez la transition écologique de votre ville avec GreenOCity
           </h1>
           <p className="text-white text-lg md:text-2xl mb-6 md:w-[750px] lg:w-[850px] md:mx-auto">
-            Connectons les projets urbains à fort impact écologique avec les investisseurs engagés, grâce à des Green Bonds accessibles et responsables.
+            Connectons les projets urbains à fort impact écologique avec les
+            investisseurs engagés, grâce à des Green Bonds accessibles et
+            responsables.
           </p>
           <Button size="large" className="bg-[#2AAA8A] rounded-full uppercase">
             Découvrir notre solution
@@ -55,34 +67,38 @@ function Hero() {
 
 function MissionSection() {
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <div className="py-16 px-4 sm:px-6 lg:px-8 ">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
-          Notre mission : réconcilier finance et écologie
+        <Badge className="bg-green-800">Notre mission</Badge>
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 my-4">
+          Réconcilier finance et écologie
         </h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           <div className="p-6 bg-green-50 rounded-lg">
             <Globe className="w-12 h-12 text-green-600 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-gray-800 mb-2">Vision</h3>
             <p className="text-gray-600">
-              Développer un monde responsable qui réconcilie écologie et inclusion, mobilité et lien social.
+              Développer un monde responsable qui réconcilie écologie et
+              inclusion, mobilité et lien social.
             </p>
           </div>
-          
-          <div className="p-6 bg-green-50 rounded-lg">
+
+          <div className="p-6 bg-white/30 rounded-lg shadow-lg">
             <Target className="w-12 h-12 text-green-600 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-gray-800 mb-2">Ambition</h3>
             <p className="text-gray-600">
-              Catalyser des solutions audacieuses pour libérer des capitaux vers une planète plus saine.
+              Catalyser des solutions audacieuses pour libérer des capitaux vers
+              une planète plus saine.
             </p>
           </div>
-          
+
           <div className="p-6 bg-green-50 rounded-lg">
             <TrendingUp className="w-12 h-12 text-green-600 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-gray-800 mb-2">Action</h3>
             <p className="text-gray-600">
-              Créer un véhicule d'investissement pour les projets verts urbains et compenser localement l'empreinte carbone.
+              Créer un véhicule d'investissement pour les projets verts urbains
+              et compenser localement l'empreinte carbone.
             </p>
           </div>
         </div>
@@ -97,7 +113,6 @@ interface Service {
   title: string;
   description: string;
   color: string;
-  bgColor: string;
 }
 
 const services: Service[] = [
@@ -105,38 +120,42 @@ const services: Service[] = [
     id: "consulting",
     icon: Users,
     title: "Conseil en Green Bonds",
-    description: "Nous accompagnons les villes dans la structuration et l'émission d'obligations vertes pour financer leurs projets écologiques.",
+    description:
+      "Nous accompagnons les villes dans la structuration et l'émission d'obligations vertes pour financer leurs projets écologiques.",
     color: "text-green-600",
-    bgColor: "bg-green-50",
   },
   {
     id: "projects",
     icon: Leaf,
     title: "Développement de Projets Verts",
-    description: "Identification et qualification de projets urbains à fort impact environnemental et social.",
-    color: "text-emerald-600",
-    bgColor: "bg-emerald-50",
+    description:
+      "Identification et qualification de projets urbains à fort impact environnemental et social.",
+    color: "text-green-600",
   },
   {
     id: "compensation",
     icon: Building,
     title: "Compensation Carbone Locale",
-    description: "Mise en relation des entreprises avec des projets locaux de compensation carbone pour éviter le greenwashing.",
-    color: "text-cyan-600",
-    bgColor: "bg-cyan-50",
+    description:
+      "Mise en relation des entreprises avec des projets locaux de compensation carbone pour éviter le greenwashing.",
+    color: "text-green-600",
   },
 ];
 
 function ServicesSection() {
   return (
-    <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-100">
-      <div className="max-w-6xl mx-auto">
+    <section className="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 ">
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-100 via-green-800/50 to-gray-100"></div>
+      <div className="relative max-w-6xl mx-auto">
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
-            Nos services pour une ville plus verte
+          <Badge className="bg-green-800">Pour une ville plus verte</Badge>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 my-4">
+            Nos services
           </h2>
           <p className="text-lg text-gray-600">
-            GreenOCity propose une approche innovante pour financer la transition écologique des villes grâce aux mécanismes de finance verte.
+            GreenOCity propose une approche innovante pour financer la
+            transition écologique des villes grâce aux mécanismes de finance
+            verte.
           </p>
         </div>
 
@@ -145,18 +164,18 @@ function ServicesSection() {
             const Icon = service.icon;
 
             return (
-              <div
+              <Card
                 key={service.id}
-                className="group border border-gray-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-2 rounded-xl overflow-hidden"
+                className="bg-white/30 group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 "
               >
-                <div className="p-8 text-center h-full flex flex-col">
+                <CardContent className="p-8 text-center h-full flex flex-col">
                   <div
-                    className={`w-20 h-20 ${service.bgColor} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}
+                    className={`w-20 h-20 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}
                   >
                     <Icon className={`w-10 h-10 ${service.color}`} />
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-green-600 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-green-6 00 mb-4 group-hover:text-green-600 transition-colors duration-300">
                     {service.title}
                   </h3>
 
@@ -165,10 +184,13 @@ function ServicesSection() {
                   </p>
 
                   <div
-                    className={`w-12 h-1 ${service.color.replace("text-", "bg-")} rounded-full mx-auto mt-6 group-hover:w-16 transition-all duration-300`}
+                    className={`w-12 h-1 ${service.color.replace(
+                      "text-",
+                      "bg-"
+                    )} rounded-full mx-auto mt-6 group-hover:w-16 transition-all duration-300`}
                   ></div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             );
           })}
         </div>
@@ -198,20 +220,25 @@ function SolutionsSection() {
   ];
 
   return (
-    <div className="py-16 bg-gray-50">
+    <div className="py-16">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-            Nos solutions pour les villes
+        <div className="text-left mb-12">
+          <Badge className="bg-green-800">Pour les villes</Badge>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 my-4">
+            Nos solutions
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            GreenOCity finance des projets verts locaux avec des co-bénéfices sociaux et environnementaux.
+          <p className="text-lg text-gray-600 max-w-2xl ">
+            GreenOCity finance des projets verts locaux avec des co-bénéfices
+            sociaux et environnementaux.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {solutions.map((solution, index) => (
-            <div key={index} className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            <div
+              key={index}
+              className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+            >
               <div className="aspect-[4/3] relative">
                 <Image
                   src={solution.image}
@@ -238,12 +265,14 @@ function Methodology() {
   const steps = [
     {
       title: "Pré-vente",
-      description: "Roadshow auprès des investisseurs ESG locaux et internationaux",
+      description:
+        "Roadshow auprès des investisseurs ESG locaux et internationaux",
       icon: "1",
     },
     {
       title: "Cadrage",
-      description: "Analyse des performances énergétiques et établissement du point zéro",
+      description:
+        "Analyse des performances énergétiques et établissement du point zéro",
       icon: "2",
     },
     {
@@ -269,10 +298,12 @@ function Methodology() {
   ];
 
   return (
-    <div className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
+    <div className="relative py-16 ">
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-100 via-green-800/50 to-gray-100"></div>
+      <div className="relative max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+          <Badge className="bg-green-800">Comment fonctionne-t-on?</Badge>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 my-4">
             Notre méthodologie en 6 étapes
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -282,13 +313,17 @@ function Methodology() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {steps.map((step, index) => (
-            <div key={index} className="bg-green-50 p-6 rounded-lg border border-green-100">
-              <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">
-                {step.icon}
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">{step.title}</h3>
-              <p className="text-gray-600">{step.description}</p>
-            </div>
+            <Card key={index} className="bg-white/30">
+              <CardContent>
+                <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">
+                  {step.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-gray-600">{step.description}</p>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
@@ -300,26 +335,30 @@ function News() {
   const newsItems = [
     {
       title: "GreenOCity lance une nouvelle plateforme de Green Bonds",
-      description: "Notre nouvelle solution permet aux villes de financer plus facilement leurs projets écologiques grâce à des obligations vertes innovantes.",
+      description:
+        "Notre nouvelle solution permet aux villes de financer plus facilement leurs projets écologiques grâce à des obligations vertes innovantes.",
       date: "15 mars 2024",
     },
     {
       title: "Partenaire avec la Ville SA pour 4 projets verts",
-      description: "GreenOCity accompagne la Ville SA dans le financement de projets de performance énergétique et de désartificialisation des sols.",
+      description:
+        "GreenOCity accompagne la Ville SA dans le financement de projets de performance énergétique et de désartificialisation des sols.",
       date: "2 février 2024",
     },
     {
       title: "Compensation carbone locale : une solution anti-greenwashing",
-      description: "Notre approche permet aux entreprises de compenser leurs émissions localement, avec des bénéfices mesurables pour les communautés.",
+      description:
+        "Notre approche permet aux entreprises de compenser leurs émissions localement, avec des bénéfices mesurables pour les communautés.",
       date: "10 janvier 2024",
     },
   ];
 
   return (
-    <div className="py-16 bg-gray-50">
+    <div className="py-16 bg-[url('/images/feuilles.png')] bg-no-repeat bg-right bg-contain">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+          <Badge className="bg-green-800">Les nouveautés</Badge>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 my-4">
             Actualités GreenOCity
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -329,14 +368,22 @@ function News() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {newsItems.map((item, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div
+              key={index}
+              className="bg-white/70 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
               <div className="h-48 bg-green-100 rounded-lg mb-4 flex items-center justify-center">
                 <Leaf className="w-12 h-12 text-green-600" />
               </div>
               <span className="text-sm text-gray-500">{item.date}</span>
-              <h3 className="text-xl font-bold text-gray-800 mt-2 mb-3">{item.title}</h3>
-              <p className="text-gray-600 mb-4">{item.description}</p>
-              <a href="#" className="text-green-600 font-medium hover:text-green-700">
+              <h3 className="text-xl font-bold text-gray-800 mt-2 mb-3">
+                {item.title}
+              </h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">{item.description}</p>
+              <a
+                href="#"
+                className=" text-green-600 font-medium hover:text-green-700"
+              >
                 Lire la suite →
               </a>
             </div>
@@ -344,7 +391,10 @@ function News() {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-50">
+          <Button
+            variant="outline"
+            className="bg-white/30 border-green-600 text-green-600 hover:bg-green-50"
+          >
             Voir toutes les actualités
           </Button>
         </div>
@@ -357,26 +407,31 @@ function Benefits() {
   const benefits = [
     {
       title: "Pour les villes",
-      description: "Financement complémentaire pour des projets verts sans augmentation d'impôts",
+      description:
+        "Financement complémentaire pour des projets verts sans augmentation d'impôts",
       icon: <Building className="w-8 h-8 text-green-600" />,
     },
     {
       title: "Pour les entreprises",
-      description: "Compensation carbone locale avec traçabilité et impact social mesurable",
+      description:
+        "Compensation carbone locale avec traçabilité et impact social mesurable",
       icon: <TrendingUp className="w-8 h-8 text-green-600" />,
     },
     {
       title: "Pour les citoyens",
-      description: "Amélioration de la qualité de vie et de la santé environnementale",
+      description:
+        "Amélioration de la qualité de vie et de la santé environnementale",
       icon: <Users className="w-8 h-8 text-green-600" />,
     },
   ];
 
   return (
-    <div className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
+    <div className="relative py-16 ">
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-100 via-green-800/50 to-gray-100"></div>
+      <div className="relative max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+          <Badge className="bg-green-800">Les avantages</Badge>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 my-4">
             Les avantages GreenOCity
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -390,7 +445,9 @@ function Benefits() {
               <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
                 {benefit.icon}
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">{benefit.title}</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">
+                {benefit.title}
+              </h3>
               <p className="text-gray-600">{benefit.description}</p>
             </div>
           ))}
@@ -409,7 +466,8 @@ function ContactSection() {
             Prêt à transformer votre ville ?
           </h2>
           <p className="text-lg max-w-3xl mx-auto">
-            Contactez-nous pour discuter de vos projets verts et découvrir comment GreenOCity peut vous aider.
+            Contactez-nous pour discuter de vos projets verts et découvrir
+            comment GreenOCity peut vous aider.
           </p>
         </div>
 
@@ -418,15 +476,24 @@ function ContactSection() {
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium mb-1">Nom</label>
-              <input type="text" className="w-full px-4 py-2 border rounded-lg" />
+              <input
+                type="text"
+                className="w-full px-4 py-2 border rounded-lg"
+              />
             </div>
             <div>
               <label className="block text-sm font-medium mb-1">Email</label>
-              <input type="email" className="w-full px-4 py-2 border rounded-lg" />
+              <input
+                type="email"
+                className="w-full px-4 py-2 border rounded-lg"
+              />
             </div>
             <div>
               <label className="block text-sm font-medium mb-1">Message</label>
-              <textarea rows={4} className="w-full px-4 py-2 border rounded-lg"></textarea>
+              <textarea
+                rows={4}
+                className="w-full px-4 py-2 border rounded-lg"
+              ></textarea>
             </div>
             <Button className="w-full bg-green-600 hover:bg-green-700">
               Envoyer
