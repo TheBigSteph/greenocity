@@ -198,7 +198,8 @@ export const OurVision = () => {
       {/* Team Section */}
       <div className="relative ">
         <div className="absolute inset-0 bg-gradient-to-t from-gray-100 to-green-800  opacity-30 blur-2xl"></div>
-        <div className="relative  max-w-6xl mx-auto px-6 py-16">
+        <div className="relative max-w-6xl mx-auto px-6 py-16">
+          {/* <Badge className="bg-green-800">Qui travaille?</Badge> */}
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-10 text-center">
             Notre équipe
           </h2>

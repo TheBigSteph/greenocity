@@ -75,7 +75,7 @@ function MissionSection() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          <div className="p-6 bg-green-50 rounded-lg">
+          <div className="p-6 bg-green-100 rounded-lg">
             <Globe className="w-12 h-12 text-green-600 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-gray-800 mb-2">Vision</h3>
             <p className="text-gray-600">
@@ -93,7 +93,7 @@ function MissionSection() {
             </p>
           </div>
 
-          <div className="p-6 bg-green-50 rounded-lg">
+          <div className="p-6 bg-green-100 rounded-lg">
             <TrendingUp className="w-12 h-12 text-green-600 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-gray-800 mb-2">Action</h3>
             <p className="text-gray-600">
@@ -426,7 +426,7 @@ function Benefits() {
   ];
 
   return (
-    <div className="relative py-16 ">
+    <div className="relative py-16 mb-16">
       <div className="absolute inset-0 bg-gradient-to-t from-gray-100 via-green-800/50 to-gray-100"></div>
       <div className="relative max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
@@ -441,11 +441,11 @@ function Benefits() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
-            <div key={index} className="text-center p-6">
+            <div key={index} className="text-center p-6 bg-white/30 border-1 border-white shadow-md rounded-lg hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
                 {benefit.icon}
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">
+              <h3 className="text-xl font-bold text-green-600 mb-3">
                 {benefit.title}
               </h3>
               <p className="text-gray-600">{benefit.description}</p>
