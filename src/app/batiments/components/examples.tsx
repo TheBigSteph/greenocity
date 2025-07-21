@@ -90,7 +90,7 @@ export const Examples = () => {
       </div>
 
       <div className="w-full md:max-w-6xl mx-auto px-4 py-16">
-        <div className="flex flex-col items-center mb-12 ">
+        <div className="flex flex-col items-center mb-12 bg-[url('/images/feuilles.png')] bg-no-repeat bg-right bg-contain">
           <Badge className="bg-green-800">Les avantages</Badge>
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800 my-4">
             Les avantages client
@@ -109,7 +109,7 @@ export const Examples = () => {
               {advantages.slice(0, 2).map((value, index) => (
                 <div
                   key={index}
-                  className=" p-4  hover:shadow-lg transition-shadow"
+                  className=" bg-white/30 p-6 shadow-lg rounded-lg hover:shadow-lg transition-shadow"
                 >
                   <div className="flex items-center text-green-600 mb-4">
                     {/* {value.icon} */}
@@ -127,7 +127,7 @@ export const Examples = () => {
           <div className="flex-shrink-0 mx-2">
             <div className="">
               <Image
-                src="/images/advantage.png"
+                src="/images/rond.png"
                 alt="les avantages"
                 width={400}
                 height={400}
@@ -141,7 +141,7 @@ export const Examples = () => {
               {advantages.slice(2, 4).map((value, index) => (
                 <div
                   key={index + 2}
-                  className=" p-6  hover:shadow-lg transition-shadow"
+                  className="bg-white/30 p-6 shadow-lg rounded-lg hover:shadow-lg transition-shadow"
                 >
                   <div className="flex items-center text-green-600 mb-4 ">
                     {/* {value.icon} */}

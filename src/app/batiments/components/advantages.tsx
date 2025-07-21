@@ -109,7 +109,7 @@ export const Advantages = () => {
                 {accompagnement.slice(0, 3).map((value, index) => (
                   <div
                     key={index}
-                    className=" p-4  hover:shadow-lg transition-shadow"
+                    className=" p-4 shadow-md rounded-lg hover:shadow-lg transition-shadow"
                   >
                     <div className="flex items-center text-green-600 mb-4">
                       {value.icon}
@@ -135,7 +135,7 @@ export const Advantages = () => {
                 {accompagnement.slice(3, 5).map((value, index) => (
                   <div
                     key={index + 2}
-                    className=" p-6  hover:shadow-lg transition-shadow"
+                    className=" p-6 shadow-md rounded-lg  hover:shadow-lg transition-shadow"
                   >
                     <div className="flex items-center text-green-600 mb-4 ">
                       <div className="w-24 h-1 bg-green-800"></div>
