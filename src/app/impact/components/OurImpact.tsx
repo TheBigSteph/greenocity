@@ -88,7 +88,7 @@ export function OurImpact() {
     <div className="relative py-12">
       {/* Section Green Bonds */}
       <div className=" mb-20 w-full md:max-w-11/12 mx-auto px-4 ">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 bg-[url('/images/feuilles.png')] bg-no-repeat bg-left bg-contain ">
           <Badge className="bg-green-800 ">
             {/* <Building className="h-4 w-4 mr-2" /> */}
             Pour les villes
@@ -102,10 +102,10 @@ export function OurImpact() {
           </p>
         </div>
 
-        <div className="mb-12">
+        <div className="mb-12 ">
           <div className="grid md:grid-cols-2 gap-12">
-            <div className= "bg-[url('/images/feuilles.png')] bg-no-repeat bg-left bg-contain  ">
-              <p className="flex text-green-600 font-bold mb-6">
+            <div className=" ">
+              <p className="flex text-lg text-green-600 font-bold mb-6">
                 <Leaf className="h-6 w-6 mr-2" />
                 Qu'est-ce qu'une obligation verte ?
               </p>
@@ -115,6 +115,22 @@ export function OurImpact() {
                 à financer des projets ayant un bénéfice environnemental.
               </p>
 
+              <div className="mt-10">
+                <p className="text-gray-700 font-semibold text-lg mb-4">
+                  Ces projets peuvent inclure des initiatives telles que :
+                </p>
+                <div className="space-y-2">
+                  {greenProjects.map((project, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center text-lg text-gray-700"
+                    >
+                      <CheckCircle className="h-8 w-8 text-green-600 mt-0.5 mr-2 flex-shrink-0" />
+                      {project.name}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
             <Image
               src="/images/cover.avif"
@@ -124,23 +140,6 @@ export function OurImpact() {
               className="rounded-tl-3xl rounded-br-3xl shadow-md"
             />
           </div>
-
-          <div>
-            <p className="text-gray-700 font-semibold text-lg mb-4">
-              Ces projets peuvent inclure des initiatives telles que :
-            </p>
-            <div className="space-y-2">
-              {greenProjects.map((project, index) => (
-                <div
-                  key={index}
-                  className="flex items-center text-lg text-gray-700"
-                >
-                  <CheckCircle className="h-8 w-8 text-green-600 mt-0.5 mr-2 flex-shrink-0" />
-                  {project.name}
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
 
@@ -148,13 +147,16 @@ export function OurImpact() {
         <div className="absolute inset-0 bg-gradient-to-t from-gray-100 via-green-800/50 to-gray-100"></div>
         <div className="relative w-full md:max-w-11/12 mx-auto px-4  ">
           <div className="mb-12">
-            <p className="flex text-green-600 font-bold mb-6">
+            <p className="flex justify-center items-center text-lg text-green-600 font-bold mb-8">
               <TrendingUp className="h-6 w-6 mr-2" />
               Avantages des obligations vertes
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               {greenAdvantages.map((advantage, index) => (
-                <Card key={index} className="flex text-center shadow-lg bg-white/30">
+                <Card
+                  key={index}
+                  className="flex text-center shadow-lg bg-white/30"
+                >
                   <CardContent className="">
                     <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
                     <span className="text-gray-700">
@@ -175,17 +177,17 @@ export function OurImpact() {
 
           {/* Principes des obligations vertes */}
           <div>
-            <div className="">
-              <p className="flex text-green-600 font-bold mb-6">
+            <div className="grid justify-center items-center text-center">
+              <p className="flex justify-center text-lg text-green-600 font-bold mb-6">
                 <Recycle className="h-6 w-6 mr-2" />
                 Principes des obligations vertes
               </p>
-              <div className="w-full md:max-w-xl">
+              <p className="w-full md:max-w-2xl text-base ">
                 Les principes qui régissent les obligations vertes sont
                 essentiels pour garantir que les fonds levés sont utilisés de
-                manière appropriée.
-                <p>Voici les principaux éléments :</p>
-              </div>
+                manière appropriée. <br />
+                Voici les principaux éléments :
+              </p>
             </div>
 
             <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
@@ -286,8 +288,8 @@ export function OurImpact() {
       </div>
 
       {/* Section CEE et MaPrimeRénov' */}
-      <div className="my-20 w-full md:max-w-11/12 mx-auto px-4">
-        <div className="text-center mb-12">
+      <div className="my-20 w-full md:max-w-11/12 mx-auto px-4 ">
+        <div className="text-center mb-12 bg-[url('/images/feuilles.png')] bg-no-repeat bg-right bg-contain">
           <Badge className=" bg-green-800 ">
             {/* <Building className="h-4 w-4 mr-2" /> */}
             Pour les bâtiments
