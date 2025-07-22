@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const fonctions = [
   {
-    title: "plateforme digitale innovante",
+    title: "Plateforme digitale innovante",
     description:
       "Une interface intuitive qui centralise toutes les étapes de votre projet de rénovation énergétique, depuis l'audit initial jusqu'au suivi post-travaux.",
   },
@@ -96,7 +96,7 @@ export const Assistant = () => {
               className="flex flex-col items-center text-center bg-white/30 shadow-lg"
             >
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-green-600 mb-2">
+                <h3 className="text-lg font-bold text-green-600 mb-4">
                   {fonction.title}
                 </h3>
                 <p className="text-gray-600">{fonction.description}</p>

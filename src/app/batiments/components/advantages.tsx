@@ -5,41 +5,35 @@ import Image from "next/image";
 
 const accompagnement = [
   {
-    title: "Accompagnement personnalisé",
+    title: "Phase diagnostic",
     description:
-      "Un interlocuteur dédié pour vous guider à chaque étape du projet.",
+      "Visite-conseil approfondie de votre logement, identification précise des besoins et des points faibles énergétiques, établissement du DPE si nécessaire.",
     icon: <Sun className="h-6 w-6" />,
   },
   {
-    title: "Accompagnement personnalisé",
+    title: "Phase financement",
     description:
-      "Un interlocuteur dédié pour vous guider à chaque étape du projet.",
+      "Constitution et suivi des dossiers MaPrimeRénov', Certificats d'Économie d'Énergie, aides locales et prêts à taux zéro.",
     icon: <Sun className="h-6 w-6" />,
   },
   {
-    title: "Accompagnement personnalisé",
+    title: "Phase post-travaux",
     description:
-      "Un interlocuteur dédié pour vous guider à chaque étape du projet.",
+      "Conseils personnalisés sur les éco-gestes, suivi des consommations, accompagnement pour maximiser les bénéfices de votre rénovation.",
     icon: <Sun className="h-6 w-6" />,
   },
   {
-    title: "Accompagnement personnalisé",
+    title: "Phase préparation",
     description:
-      "Un interlocuteur dédié pour vous guider à chaque étape du projet.",
+      "Sélection rigoureuse d'artisans certifiés, analyse comparative des devis, planification détaillée du calendrier des travaux.",
     icon: <Sun className="h-6 w-6" />,
   },
   {
-    title: "Accompagnement personnalisé",
+    title: "Phase réalisation",
     description:
-      "Un interlocuteur dédié pour vous guider à chaque étape du projet.",
+      "Suivi de chantier, contrôle qualité des travaux, vérification de la conformité aux normes et aux engagements des artisans.",
     icon: <Sun className="h-6 w-6" />,
-  },
-  {
-    title: "Accompagnement personnalisé",
-    description:
-      "Un interlocuteur dédié pour vous guider à chaque étape du projet.",
-    icon: <Sun className="h-6 w-6" />,
-  },
+  }
 ];
 
 export const Advantages = () => {
@@ -104,7 +98,7 @@ export const Advantages = () => {
           {/* Version Desktop */}
           <div className="hidden lg:flex items-center md:flex sm:flex ">
             {/* Cartes de gauche */}
-            <div className="flex-1 max-w-sm">
+            <div className="flex-1 max-w-md">
               <div className="space-y-1 ">
                 {accompagnement.slice(0, 3).map((value, index) => (
                   <div
@@ -126,11 +120,11 @@ export const Advantages = () => {
 
             {/* Image centrée */}
             <div className="flex-shrink-0 mx-0">
-              <div className="h-96 w-2 bg-green-800" />
+              <div className="h-[550px] w-2 bg-green-800" />
             </div>
 
             {/* Cartes de droite */}
-            <div className="flex-1 max-w-sm">
+            <div className="flex-1 max-w-md">
               <div className="space-y-1 ">
                 {accompagnement.slice(3, 5).map((value, index) => (
                   <div

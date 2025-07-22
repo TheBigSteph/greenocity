@@ -127,7 +127,7 @@ export const Examples = () => {
           <div className="flex-shrink-0 mx-2">
             <div className="">
               <Image
-                src="/images/rond.png"
+                src="/images/advantage.png"
                 alt="les avantages"
                 width={400}
                 height={400}
